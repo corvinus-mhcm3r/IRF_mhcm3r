@@ -7,13 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Reflection;
 
 namespace excel04
 {
     public partial class Form1 : Form
     {
+        
         RealEstateEntities context = new RealEstateEntities();
-        List<Flat> = FlatStyle;
+        List<Flat> Flats;
+        Excel.Application xlApp;
+        Excel.Workbook xlWB;
+        Excel.Worksheet xlSheet;
 
         public Form1()
         {
