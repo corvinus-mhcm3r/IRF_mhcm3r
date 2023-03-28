@@ -58,7 +58,14 @@ namespace irf_gyak5_mhcm3r2
             var xml = new XmlDocument(); //ezt meg kell jegyezni, hogy "XmlDocument" !!!
             xml.LoadXml(result); //vigyázzunk, hogy ez kell, nem a sima Load függvény
 
-            xml.DocumentElement
+            foreach (XmlElement item in xml.DocumentElement)
+            {
+                var r = new RateData()
+                {
+
+                };
+                Rates.Add(r);
+            }
         }
     }
 }
