@@ -40,28 +40,30 @@ namespace irf_gyak5_mhcm3r2
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(415, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(353, 426);
             this.dataGridView1.TabIndex = 0;
             // 
             // chartRateData
             // 
+            this.chartRateData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chartRateData.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartRateData.Legends.Add(legend1);
-            this.chartRateData.Location = new System.Drawing.Point(433, 12);
+            this.chartRateData.Location = new System.Drawing.Point(371, 12);
             this.chartRateData.Name = "chartRateData";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartRateData.Series.Add(series1);
-            this.chartRateData.Size = new System.Drawing.Size(355, 426);
+            this.chartRateData.Size = new System.Drawing.Size(417, 426);
             this.chartRateData.TabIndex = 1;
             this.chartRateData.Text = "chart1";
             // 

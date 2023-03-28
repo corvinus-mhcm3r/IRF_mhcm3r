@@ -30,11 +30,11 @@ namespace irf_gyak5_mhcm3r2
 
             chartRateData.DataSource = Rates;
 
-            var series = chartRateData.Series[0];
+            var series = chartRateData.Series[0]; 
             series.ChartType = SeriesChartType.Line;
             series.XValueMember = "Date";
             series.YValueMembers = "Value";
-            series.BorderWidth = 2;
+            series.BorderWidth = 2; //innentől kezdve formázás
 
             var legend = chartRateData.Legends[0];
             legend.Enabled = false;
@@ -42,7 +42,7 @@ namespace irf_gyak5_mhcm3r2
             var chartArea = chartRateData.ChartAreas[0];
             chartArea.AxisX.MajorGrid.Enabled = false;
             chartArea.AxisY.MajorGrid.Enabled = false;
-            chartArea.AxisY.IsStartedFromZero = false;
+            chartArea.AxisY.IsStartedFromZero = false; //idáig formázás
         }
 
         private string GetExchangeRates()
@@ -88,7 +88,7 @@ namespace irf_gyak5_mhcm3r2
                 var rate = (XmlElement)item.ChildNodes[0];
                 var currency = rate.GetAttribute("curr");
                 var unit = int.Parse(rate.GetAttribute("unit"));
-                var value = int.Parse(rate.InnerText);
+                var value = decimal.Parse(rate.InnerText);
 
                 Rates.Add(new RateData()
                 {
