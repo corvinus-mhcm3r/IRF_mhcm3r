@@ -68,10 +68,16 @@ namespace irf_gyak5_mhcm3r2
 
                 var date = item.GetAttribute("date"); //ezt az xml fájlban ha megnézzük, onnan tudjuk meg, számít a kis és nagybetű
 
+                var rate = (XmlElement)item.ChildNodes[0];
+                var currency = rate.GetAttribute("curr");
+                var value = rate.InnerText;
+
                 Rates.Add(new RateData()
                 {
-                    Date = DateTime.Parse(date)
-                });
+                    Date = DateTime.Parse(date),
+                    Currency = currency,
+                    Value = decimal.Parse(value)
+                }) ;
             }
         }
     }
