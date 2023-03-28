@@ -70,13 +70,16 @@ namespace irf_gyak5_mhcm3r2
 
                 var rate = (XmlElement)item.ChildNodes[0];
                 var currency = rate.GetAttribute("curr");
+                var unit = int.rate.GetAttribute("unit");
                 var value = rate.InnerText;
 
                 Rates.Add(new RateData()
                 {
                     Date = DateTime.Parse(date),
                     Currency = currency,
-                    Value = decimal.Parse(value)
+                    Value = unit != 0
+                        ? value / unit
+                        : 0
                 }) ;
             }
         }
