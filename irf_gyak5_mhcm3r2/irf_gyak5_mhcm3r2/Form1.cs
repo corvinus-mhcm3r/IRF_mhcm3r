@@ -60,11 +60,18 @@ namespace irf_gyak5_mhcm3r2
 
             foreach (XmlElement item in xml.DocumentElement)
             {
-                var r = new RateData()
-                {
+                //var r = new RateData()
+                //{
 
-                };
-                Rates.Add(r);
+                //};
+                //Rates.Add(r)
+
+                var date = item.GetAttribute("date"); //ezt az xml fájlban ha megnézzük, onnan tudjuk meg, számít a kis és nagybetű
+
+                Rates.Add(new RateData()
+                {
+                    Date = DateTime.Parse(date)
+                });
             }
         }
     }
