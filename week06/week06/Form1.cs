@@ -14,13 +14,18 @@ namespace week06
 {
     public partial class Form1 : Form
     {
+        private Toy _nextToy;
         List<Toy> _toys = new List<Toy>();
         private IToyFactory _factory;           //propfull TabTab
 
         public IToyFactory Factory
         {
             get { return _factory; }
-            set { _factory = value; }
+            set
+            {
+                _factory = value;
+                DisplayNext();
+            }
         }
 
         public Form1()
@@ -65,6 +70,16 @@ namespace week06
         private void btnSelectBall_Click(object sender, EventArgs e)
         {
             Factory = new BallFactory();
+        }
+
+        private void DisplayNext()
+        {
+            if (_nextToy != null)
+                Controls.Remove(_nextToy);
+            _nextToy = Factory.CreateNew();
+            _nextToy.Top = lblNext.Top + lblNext.Height + 20;
+            _nextToy.Left = lblNext.Left;
+            Controls.Add(_nextToy);
         }
     }
 }

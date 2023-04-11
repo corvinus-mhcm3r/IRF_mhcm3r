@@ -40,9 +40,9 @@ namespace week06
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(12, 93);
+            this.mainPanel.Location = new System.Drawing.Point(12, 139);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(776, 345);
+            this.mainPanel.Size = new System.Drawing.Size(776, 299);
             this.mainPanel.TabIndex = 0;
             // 
             // createTimer
