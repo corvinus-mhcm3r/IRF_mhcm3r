@@ -8,9 +8,9 @@ using System.Drawing;
 
 namespace week06.Abstractions //átmásoltuk a labdát, de ezt írjuk át erre a mappára!!!
 {
-    public class Ball : Label //itt rename-el a Ballt átírtuk Toy-ra, de csak azután szabad, hogy átírtuk a mappát
+    public abstract class Toy : Label //itt rename-el a Ballt átírtuk Toy-ra, de csak azután szabad, hogy átírtuk a mappát
     {
-        public Ball()
+        public Toy()
         {
             AutoSize = false;
             Width = 50;
@@ -23,10 +23,7 @@ namespace week06.Abstractions //átmásoltuk a labdát, de ezt írjuk át erre a
             DrawImage(e.Graphics); //ez kell, hogy használja a rajzolást
         }
 
-        protected void DrawImage(Graphics g)
-        {
-            g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height); //ez rajzol rá egy kék kört
-        }
+        protected abstract void DrawImage(Graphics g) //itt ezt az osztályhoz is be kell írni, hogy abstract
 
         public void MoveBall()
         {
