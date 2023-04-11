@@ -23,7 +23,7 @@ namespace week06.Abstractions //átmásoltuk a labdát, de ezt írjuk át erre a
             DrawImage(e.Graphics); //ez kell, hogy használja a rajzolást
         }
 
-        protected abstract void DrawImage(Graphics g) //itt ezt az osztályhoz is be kell írni, hogy abstract
+        protected abstract void DrawImage(Graphics g); //itt ezt az osztályhoz is be kell írni, hogy abstract
 
         public void MoveBall()
         {

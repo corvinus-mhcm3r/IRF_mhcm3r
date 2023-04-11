@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using week06.Abstractions;
 using week06.Entities;
 
 namespace week06
 {
     public partial class Form1 : Form
     {
-        List<Ball> _balls = new List<Ball>();
-        private BallFactory _factory;           //propfull TabTab
+        List<Toy> _toys = new List<Toy>();
+        private IToyFactory _factory;           //propfull TabTab
 
-        public BallFactory Factory
+        public IToyFactory Factory
         {
             get { return _factory; }
             set { _factory = value; }
@@ -30,30 +31,40 @@ namespace week06
 
         private void createTimer_Tick(object sender, EventArgs e) //ezeknél át kellett állítani az Enabled-et és az időt is!!
         {
-            var ball = Factory.CreateNew(); //így a gyárral létrehozok egy labdát, és azért így (nem create new = ...) mert a gyárat másra is akarom használni
-            _balls.Add(ball);
-            mainPanel.Controls.Add(ball);
-            ball.Left = -ball.Width;
+            var toy = Factory.CreateNew(); //így a gyárral létrehozok egy labdát, és azért így (nem create new = ...) mert a gyárat másra is akarom használni
+            _toys.Add(toy);
+            mainPanel.Controls.Add(toy);
+            toy.Left = -toy.Width;
         }
 
         private void conveyorTimer_Tick(object sender, EventArgs e) //ezzel most beállítjuk, hogy kék labdák jöjjenek balról jobbra
         {
             var maxPosition = 0;
-            foreach (var ball in _balls)
+            foreach (var toy in _toys)
             {
-                ball.MoveBall();
-                if (ball.Left > maxPosition)
+                toy.MoveBall();
+                if (toy.Left > maxPosition)
                 {
-                    maxPosition = ball.Left;
+                    maxPosition = toy.Left;
                 }
             }
 
             if (maxPosition > 1000) //ezzel állítjuk meg, hogy a végtelenségig menjenek a labdák
             {
-                var oldestBall = _balls[0];
-                mainPanel.Controls.Remove(oldestBall);
-                _balls.Remove(oldestBall);
+                var oldestToy = _toys[0];
+                mainPanel.Controls.Remove(oldestToy);
+                _toys.Remove(oldestToy);
             }
+        }
+
+        private void btnSelectCar_Click(object sender, EventArgs e)
+        {
+            Factory = new CarFactory();
+        }
+
+        private void btnSelectBall_Click(object sender, EventArgs e)
+        {
+            Factory = new BallFactory();
         }
     }
 }
