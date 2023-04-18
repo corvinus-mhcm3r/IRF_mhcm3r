@@ -1,5 +1,5 @@
 ﻿
-namespace MintaZH2_mhcm3r
+namespace irf_mhcm3r_gak7
 {
     partial class Form1
     {
