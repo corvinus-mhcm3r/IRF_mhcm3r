@@ -8,7 +8,7 @@ namespace irf_mhcm3r_gyak9_2.Entities
 {
     public class BirthProbability
     {
-        public Gender Gender { get; set; }
+        public int Age { get; set; }
         public byte NbrOfChildren { get; set; }
         public double P {get;set; }
     }

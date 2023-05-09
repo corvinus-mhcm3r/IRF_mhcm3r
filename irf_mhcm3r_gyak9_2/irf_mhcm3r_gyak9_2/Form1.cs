@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,29 @@ namespace irf_mhcm3r_gyak9_2
         public Form1()
         {
             InitializeComponent();
+            Population = GetPopulation("nép-teszt.csv");
         }
 
         public List<Person> GetPopulation(string csvpath)
         {
-            return null;
+            var population = new List<Person>();
+
+            using (var sr = new StreamReader(csvpath, Encoding.Default))
+            {
+                sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+                    population.Add(new Person()
+                    {
+                        BirthYear = int.Parse(line[0]),
+                        Gender = (Gender)Enum.Parse(typeof(Gender), line[1]),
+                        NbrOfChildren = byte.Parse(line[2])
+                    });
+                }
+            }
+
+            return population;
         }
     }
 }
