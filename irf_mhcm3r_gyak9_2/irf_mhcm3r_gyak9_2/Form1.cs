@@ -21,7 +21,7 @@ namespace irf_mhcm3r_gyak9_2
         public Form1()
         {
             InitializeComponent();
-            Population = GetPopulation("nép-teszt.csv");
+            Population.AddRange(GetPopulation("nép-teszt.csv"));
         }
 
         public List<Person> GetPopulation(string csvpath)
