@@ -22,7 +22,8 @@ namespace irf_mhcm3r_gyak9_2
         public Form1()
         {
             InitializeComponent();
-            Population.AddRange(GetPopulation(@"C:\IRFhezKell\nép-teszt.csv"));
+            //Population.AddRange(GetPopulation(@"C:\IRFhezKell\nép-teszt.csv"));
+            Population.AddRange(GetPopulation(txtBoxFile.Text));
             BirthProbabilities.AddRange(GetBirthProbabilities("születés.csv"));
             DeathProbabilities.AddRange(GetDeathProbabilities("halál.csv"));
 
