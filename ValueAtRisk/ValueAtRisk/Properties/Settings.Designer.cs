@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace irf_mhcm3r_7.het.Properties
+namespace ValueAtRisk.Properties
 {
 
 

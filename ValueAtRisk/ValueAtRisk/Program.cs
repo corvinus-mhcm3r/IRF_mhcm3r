@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace irf_mhcm3r_7.het
+namespace ValueAtRisk
 {
     internal static class Program
     {
